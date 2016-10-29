@@ -1,0 +1,495 @@
+/**
+ * LESS MIXIN
+ *
+ * @author      Samet Tarim
+ * @copyright   (c) 2016, Samet Tarim
+ * @link        http://samet-tarim.de/less-mixin
+ * @package     MelAbu
+ * @subpackage  Less mixin repository
+ * @since       1.0
+ *
+ * @see         http://www.opera.com/docs/specs/presto2.12/css/o-vendor/
+ * @see         https://msdn.microsoft.com/en-us/library/ms530752%28v=vs.85%29.aspx
+ * @see         https://developer.mozilla.org/de/docs/Web/CSS/filter
+ */
+
+/* ************************ *
+ *      @BREAKPOINTS        *
+ * ************************ */
+@mobile:    ~"only screen and (max-width: 529px)";
+@tablet:    ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop:   ~"only screen and (min-width: 950px) and (max-width: 1128px)";
+@desktop-xl:~"only screen and (min-width: 1129px)";
+
+/* ************************ *
+ *       @ANIMATION         *
+ * ************************ */
+.animation(@name, @duration:3s, @delay:1s, @iteration:infinite, @direction:alternate) {
+
+    -webkit-animation: @arguments;
+    -moz-animation: @arguments;
+    -ms-animation: @arguments;
+    animation: @arguments;
+}
+
+/* ************************ *
+ *      @APPEARANCE         *
+ * ************************ */
+.appearance(@value: none) {
+
+    -webkit-appearance: @value;
+    -moz-appearance: @value;
+    -ms-appearance: @value;
+    -o-appearance: @value;
+    appearance: @value;
+}
+
+/* ************************ *
+ *     @BACKGROUND-SIZE     *
+ * ************************ */
+.background-size(@string: cover) {
+
+    background-size: @string;
+}
+
+/* ************************ *
+ *      @BORDER-RADIUS      *
+ * ************************ */
+.border-radius(@radius: 5px) {
+
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+/* ************************ *
+ *       @BOX-SHADOW        *
+ * ************************ */
+.box-shadow(@string: 0 1px 3px rgba(0,0,0,.03)) {
+
+    -webkit-box-shadow: @string;
+    -moz-box-shadow: @string;
+    box-shadow: @string;
+}
+
+/* ************************ *
+ *      @BOX-SIZING         *
+ * ************************ */
+.box-sizing(@type: border-box) {
+
+    -webkit-box-sizing: @type;
+    -moz-box-sizing: @type;
+    box-sizing: @type;
+}
+
+/* ************************ *
+ *         @COLUMN          *
+ * ************************ */
+.column(@count:2, @gap:40px, @rule:4px dotted #222) {
+
+    -webkit-column-count: @count;
+    -moz-column-count: @count;
+    column-count: @count;
+
+    -webkit-column-gap: @gap;
+    -moz-column-gap: @gap;
+    column-gap: @gap;
+
+    -webkit-column-rule: @rule;
+    -moz-column-rule: @rule;
+    column-rule: @rule;
+}
+
+/* ************************ *
+ *      @FONT-SMOTHING      *
+ * ************************ */
+.font-smooth() {
+
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ************************ *
+ *         @HYPENS          *
+ * ************************ */
+.hyphens(@lines: 3, @before: 2, @after: 3) {
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+
+    -webkit-hyphenate-before: @before;
+    -webkit-hyphenate-after: @after;
+    hyphenate-lines: @lines;
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+}
+
+/* ************************ *
+ *     @LINEAR-GRADIENT     *
+ * ************************ */
+
+.gradient-linear(@startColor: #eee, @endColor: #ccc, @alpha: 100%, @pos: to top right) {
+
+    @first: fade(@startColor, @alpha);
+    @second: fade(@endColor, @alpha);
+
+    background-color: @first;
+
+    background-image: -webkit-gradient(linear, @pos, from(@first), to(@second));
+    background-image: -webkit-linear-gradient(@pos, @first 0, @second 100%);
+    background-image: -moz-linear-gradient(@pos, @first 0, @second 100%);
+    background-image: -ms-linear-gradient(@pos, @first 0, @second 100%);
+    background-image: -o-linear-gradient(@pos, @first 0, @second 100%);
+    background-image: linear-gradient(@pos, @first 0, @second 100%);
+
+    .ie5 & {
+        background-color: transparent;
+        filter: ~"progid:DXImageTransform.Microsoft.Gradient(startColorstr='@{startColor}', endColorstr='@{endColor}')";
+    }
+
+    .ie6 &, 
+    .ie7 & {
+        background-color: transparent;
+        filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{startColor}', endColorstr='@{endColor}')";
+    }
+    .ie8 &,
+    .ie9 & {
+        background-color: transparent;
+        -ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{startColor}', endColorstr='@{endColor}')";
+    }
+}
+
+.gradient-vertical(@startColor: #eee, @endColor: #ccc, @coef: 5%) {
+
+    @lighten: lighten(@startColor, @coef);
+    @darken: darken(@endColor, @coef);
+
+    background-color: @lighten;
+
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, @darken), color-stop(100%, @lighten));
+    background-image: -webkit-linear-gradient(top, @darken 0, @lighten 100%);
+    background-image: -moz-linear-gradient(top, @darken 0, @lighten 100%);
+    background-image: -o-linear-gradient(top, @darken 0, @lighten 100%);
+    background-image: -ms-linear-gradient(top, @darken 0, @lighten 100%);
+    background-image: linear-gradient(to bottom, @darken 0, @lighten 100%);
+
+    .ie5 & {
+        background-color: transparent;
+        filter: ~"progid:DXImageTransform.Microsoft.Gradient(startColorstr='@{lighten}', endColorstr='@{darken}')";
+    }
+
+    .ie6 &, 
+    .ie7 & {
+        background-color: transparent;
+        filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{lighten}', endColorstr='@{darken}', GradientType=0)";
+    }
+    .ie8 &,
+    .ie9 & {
+        background-color: transparent;
+        -ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{lighten}', endColorstr='@{darken}', GradientType=0)";
+    }
+}
+
+.gradient-horizontal(@startColor: #eee, @endColor: #ccc, @coef: 5%) {
+
+    @lighten: lighten(@startColor, @coef);
+    @darken: darken(@endColor, @coef);
+
+    background-color: @lighten;
+
+    background-image: -webkit-gradient(linear, top left, top right, from(@lighten), to(@darken)); 
+    background-image: -webkit-linear-gradient(left, @lighten 0%, @darken 100%);
+    background-image: -moz-linear-gradient(left, @lighten 0%, @darken 100%);
+    background-image: -ms-linear-gradient(left, @lighten 0%, @darken 100%);
+    background-image: -o-linear-gradient(left, @lighten 0%, @darken 100%);
+    background-image: linear-gradient(left, @lighten 0%, @darken 100%); 
+
+    .ie5 & {
+        background-color: transparent;
+        filter: ~"progid:DXImageTransform.Microsoft.Gradient(startColorstr='@{lighten}', endColorstr='@{darken}')"; 
+    }
+
+    .ie6 &, 
+    .ie7 & {
+        background-color: transparent;
+        filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{lighten}', endColorstr='@{darken}', GradientType=1)"; 
+    }
+    .ie8 &,
+    .ie9 & {
+        background-color: transparent;
+        -ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{lighten}', endColorstr='@{darken}', GradientType=1)"; 
+    }
+}
+
+.gradient-diagonal(@startColor: #eee, @endColor: #ccc) {
+
+    background-color: @startColor;
+
+    background-image: -webkit-linear-gradient(left top, @startColor 0%, @endColor 100%);
+    background-image: -moz-linear-gradient(bottom right, @startColor 0%, @endColor 100%);
+    background-image: -o-linear-gradient(bottom right, @startColor 0%, @endColor 100%);
+    background-image: linear-gradient(to bottom right, @startColor 0%, @endColor 100%);
+
+    .ie5 & {
+        background-color: transparent;
+        filter: ~"progid:DXImageTransform.Microsoft.Gradient(startColorstr='@{startColor}', endColorstr='@{endColor}')";
+    }
+
+    .ie6 &, 
+    .ie7 & {
+        background-color: transparent;
+        filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{startColor}', endColorstr='@{endColor}')";
+    }
+    .ie8 &,
+    .ie9 & {
+        background-color: transparent;
+        -ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr='@{startColor}', endColorstr='@{endColor}')";
+    }
+}
+
+/* ************************ *
+ *         @OPACITY         *
+ * ************************ */
+.opacity(@opacity: .7) {
+
+    @ieOpacity: @opacity * 100;
+
+    -webkit-opacity: @opacity;
+    -ms-opacity: @opacity;
+    opacity: @opacity;
+
+    .ie5x & {
+        filter: ~"progid:DXImageTransform.Microsoft.Alpha(@{ieOpacity})";
+    }
+
+    .ie6 &, 
+    .ie7 & {
+        filter: ~"alpha(opacity='@{ieOpacity}')";
+    }
+
+    .ie8 &,
+    .ie9 & {
+        -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(Opacity='@{ieOpacity}')";
+    }
+}
+
+/* ************************ *
+ *      @PERSPECTIVE        *
+ * ************************ */
+.perspective(@value) {
+
+    -webkit-perspective: @value;
+    -moz-perspective: @value;
+    perspective: @value;
+}
+
+.perspective-origin(@value) {
+
+    -webkit-perspective-origin: @value;
+    -moz-perspective-origin: @value;
+    perspective-origin: @value;
+}
+
+.perspective-x(@value, @rotate) {
+
+    -webkit-transform: perspective( @value ) rotateX( @rotate );
+    -moz-transform: perspective( @value ) rotateX( @rotate );
+    -ms-transform: perspective( @value ) rotateX( @rotate );
+    transform: perspective( @value ) rotateX( @rotate );
+}
+
+.perspective-y(@value, @rotate) {
+
+    -webkit-transform: perspective( @value ) rotateY( @rotate );
+    -moz-transform: perspective( @value ) rotateY( @rotate );
+    -ms-transform: perspective( @value ) rotateY( @rotate );
+    transform: perspective( @value ) rotateY( @rotate );
+}
+
+/* ************************ *
+ *  @TRANSFORM PERSPECTIVE  *
+ * ************************ */
+.t-perspective(@value) {
+
+    -webkit-transform: perspective( @value );
+    -moz-transform: perspective( @value );
+    -ms-transform: perspective( @value );
+    transform: perspective( @value );
+}
+
+/* ************************ *
+ *      @PLACEHOLDER        *
+ * ************************ */
+.placeholder(@value: #ccc) {
+
+    &::-webkit-input-placeholder {
+
+        color: @value;
+    }
+
+    &::-moz-placeholder { 
+
+        color: @value;
+    }
+
+    &:-ms-input-placeholder {
+
+        color: @value;
+    }
+
+    &:-moz-placeholder { 
+
+        color: @value;
+    }
+}
+
+/* ************************ *
+ *        @TAB-SIZE         *
+ * ************************ */
+.tab-size(@int: 4) {
+
+    -moz-tab-size: @int;
+    -o-tab-size: @int;
+    tab-size: @int;
+}
+
+/* ************************ *
+ *         @ROTATE          *
+ * ************************ */
+.t-rotate(@deg) {
+
+    -webkit-transform: rotate( @deg );
+    -moz-transform: rotate( @deg );
+    -ms-transform: rotate( @deg );
+    transform: rotate( @deg );
+}
+
+/* ************************ *
+ *        @ROTATE3D         *
+ * ************************ */
+.t-rotate3d(@arguments) {
+
+    -webkit-transform: rotate3d( @arguments );
+    -moz-transform: rotate3d( @arguments );
+    -ms-transform: rotate3d( @arguments );
+    transform: rotate3d( @arguments );
+}
+
+/* ************************ *
+ *         @SCALE           *
+ * ************************ */
+.t-scale(@factor) {
+
+    -webkit-transform: scale( @factor );
+    -moz-transform: scale( @factor );
+    -ms-transform: scale( @factor );
+    transform: scale( @factor );
+}
+
+/* ************************ *
+ *         @SCALE3D         *
+ * ************************ */
+.t-scale3d(@factor) {
+
+    -webkit-transform: scale3d( @factor );
+    -moz-transform: scale3d( @factor );
+    -ms-transform: scale3d( @factor );
+    transform: scale3d( @factor );
+}
+
+/* ************************ *
+ *          @SKEW           *
+ * ************************ */
+.t-skew(@deg) {
+
+    -webkit-transform: skew( @deg );
+    -moz-transform: skew( @deg );
+    -ms-transform: skew( @deg );
+    transform: skew( @deg );
+}
+
+/* ************************ *
+ *        @TRANSLATE        *
+ * ************************ */
+.t-translate(@x, @y:0) {
+
+    -webkit-transform: translate( @x, @y );
+    -moz-transform: translate( @x, @y );
+    -ms-transform: translate( @x, @y );
+    -o-transform: translate( @x, @y );
+    transform: translate( @x, @y );
+}
+
+/* ************************ *
+ *      @TRANSLATE 3D       *
+ * ************************ */
+.t-translate3d(@x, @y:0, @z:0) {
+
+    -webkit-transform: translate3d( @x, @y, @z );
+    -moz-transform: translate3d( @x, @y, @z );
+    -ms-transform: translate3d( @x, @y, @z );
+    transform: translate3d( @x, @y, @z );
+}
+
+/* ************************ *
+ *       @TRANSFORM         *
+ * ************************ */
+.transform(@string) {
+
+    -webkit-transform: @string;
+    -moz-transform: @string;
+    -ms-transform: @string;
+    transform: @string;
+}
+
+/* ************************ *
+ *    @TRANSFORM-ORIGIN     *
+ * ************************ */
+.transform-origin(@x: center, @y: center) {
+
+    -webkit-transform-origin: @x @y;
+    -moz-transform-origin: @x @y;
+    -ms-transform-origin: @x @y;
+    transform-origin: @x @y;
+}
+
+/* ************************ *
+ *      @TRANSITION         *
+ * ************************ */
+.transition(@string) {
+
+    -webkit-transition: @string;  
+    -moz-transition: @string;
+    -ms-transition: @string; 
+    transition: @string;  
+}
+
+/* ************************ *
+ *       @USER-SELECT       *
+ * ************************ */
+.user-select(@string: none) {
+
+    -webkit-user-select: @string;
+    -moz-user-select: @string;
+    -ms-user-select: @string;
+    user-select: @string;
+}
+
+.user-selection(@color: #f00, @bgcolor: #222) {
+
+    &::-moz-selection {
+
+        color: @color;
+        background: @bgcolor;
+    }
+
+    &::selection {
+
+        color: @color;
+        background: @bgcolor;
+    }
+}
