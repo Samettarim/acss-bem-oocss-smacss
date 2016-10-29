@@ -166,7 +166,26 @@ Good, you do this:
 
 > Scalable and Modular Architecture for CSS
 
+```css
+nav.nav-primary li { 
+    display: inline-block; 
+}
 
+nav.nav-secondary li,
+nav.nav-primary li li {
+    display: block;
+}
+```
+
+```css
+.l-inline li { 
+    display: inline-block;
+}
+
+.l-stacked li {
+    display: block;
+}
+```
 
 ###### Mix OCSS ACSS BEM SMACSS
 
