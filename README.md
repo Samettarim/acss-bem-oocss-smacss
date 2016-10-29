@@ -12,7 +12,6 @@
 
 ### This repository has some folder and file structure for you:
 
-```ruby
 less/
 |- _base/
 |  |- [_config.less](less/_base/_config.less)
@@ -45,7 +44,6 @@ less/
  
 css/
 |- style.css
-```
 
 ## Usage
 
