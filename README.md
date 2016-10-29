@@ -15,8 +15,8 @@
 ```less
 less/
 |- _base/
-|  |- _config.less
 |  |- _default.less
+|  |- _config.less
 |  |- _mixin.less (less-mixins)
 |  |- ... add more ...
 |
