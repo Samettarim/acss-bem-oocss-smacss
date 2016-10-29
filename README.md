@@ -87,7 +87,46 @@ _l-grid.less [(css-grids)](https://github.com/Samettarim/css-grids/)
 In general you should include the folder `less/` in `build` into your 
 project folder structur and create your own ACSS BEM SMACSS OOCSS work as suggested in the docs for each ACSS BEM SMACSS OOCSS template.
 
-## OOCSS
+### ACSS
+
+> Atomic CSS
+
+```css
+.mt-20 {
+    margin-top: 20px;
+}
+
+/* Or */
+
+.fl {
+    float: left;
+}
+```
+
+### BEM
+
+> Block, Element, Modifier
+
+```css
+/* This is the Block */
+.block {}
+
+/* This is an element, that helps to form the block as a whole */
+.block__element {}
+
+/* This modifies the element or a block*/
+.block--modifier {}
+```
+
+```html
+<header class="block">
+    <h1 class="block__elem1">
+        <a class="block__elem2" href="/">clubmate.fi</a>
+    </h1>
+</header>
+```
+
+### OOCSS
 
 > Separation of Structure From Skin
 
@@ -123,6 +162,11 @@ Good, you do this:
     padding: 10px;
 }
 ```
+### SMACSS
+
+> Scalable and Modular Architecture for CSS
+
+
 
 ###### Mix OCSS ACSS BEM SMACSS
 
