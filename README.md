@@ -12,31 +12,32 @@
 
 ### This repository has some folder and file structure for you:
 
+```php
 less/
 |- _base/
-|  |- [_config.less](less/_base/_config.less)
-|  |- [_default.less](less/_base/_default.less)
-|  |- _mixin.less [(less-mixins)](https://github.com/Samettarim/less-mixins/)[_default.less](less/_base/_default.less)
+|  |- _config.less
+|  |- _default.less
+|  |- _mixin.less (less-mixins)
 |  |- ... add more ...
 |
 |- _layout/
-|  |- [_l-default.less](less/_layout/_l-default.less)
-|  |- [_l-float.less](less/_layout/_l-float..less)
-|  |- [_l-margin.less](less/_layout/_l-margin..less)
-|  |- _l-grid.less [(css-grids)](https://github.com/Samettarim/css-grids/)
+|  |- _l-default.less
+|  |- _l-float.less
+|  |- _l-margin.less
+|  |- _l-grid.less (css-grids)
 |  |- ... add more ...
 |
 |- _module/
-|  |- [_m-default.less](less/_module/_m-default.less)
-|  |- [_m-button.less](less/_module/_m-button.less)
+|  |- _m-default.less
+|  |- _m-button.less
 |  |- ... add more ...
 |
 |- _state/
-|  |- [_s-default.less](less/_state/_s-default.less)
+|  |- _s-default.less
 |  |- ... add more ...
 |
 |- _theme/
-|  |- [_t-default.less](less/_theme/_t-default.less)
+|  |- _t-default.less
 |  |- ... add more ...
 |
 |- application/
@@ -44,6 +45,28 @@ less/
  
 css/
 |- style.css
+```
+
+###### _base
+[_config.less](less/_base/_config.less)
+[_default.less](less/_base/_default.less)
+_mixin.less [(less-mixins)](https://github.com/Samettarim/less-mixins/)[_default.less](less/_base/_default.less)
+
+###### _layout
+[_l-default.less](less/_layout/_l-default.less)
+[_l-float.less](less/_layout/_l-float..less)
+[_l-margin.less](less/_layout/_l-margin..less)
+_l-grid.less [(css-grids)](https://github.com/Samettarim/css-grids/)
+
+###### _module
+[_m-default.less](less/_module/_m-default.less)
+[_m-button.less](less/_module/_m-button.less)
+
+###### _state
+[_s-default.less](less/_state/_s-default.less)
+
+###### _theme
+[_t-default.less](less/_theme/_t-default.less)
 
 ## Usage
 
