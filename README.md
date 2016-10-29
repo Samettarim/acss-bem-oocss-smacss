@@ -4,11 +4,12 @@
 ![alt text](https://img.shields.io/badge/license-CCO-blue.svg "CCO 1.0")
 
 > Atomic CSS (ACSS)
-> Block, Element, Modifier (BEM)
-> Object Oriented CSS (OOCSS)
-> Scalable Modular Architecture CSS (SMACSS)
 
-* [Tests Preview](test/img/tests.png)
+> Block, Element, Modifier (BEM)
+
+> Object Oriented CSS (OOCSS)
+
+> Scalable Modular Architecture CSS (SMACSS)
 
 ### This repository has some folder and file structure for you:
 
@@ -90,8 +91,6 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 
 > Separation of Structure From Skin
 
-[More OOCSS (smashingmagazine)](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
-
 Here an ID was used and to which the skin was still defined
 Don't do this:
 ```css
@@ -123,6 +122,8 @@ Good, you do this:
     padding: 10px;
 }
 ```
+
+[More OOCSS (smashingmagazine)](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
 
 ###### Mix OCSS ACSS BEM SMACSS
 
