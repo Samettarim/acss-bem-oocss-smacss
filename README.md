@@ -53,7 +53,7 @@ css/
 
 [_default.less](less/_base/_default.less)
 
-_mixin.less [(less-mixins)](https://github.com/Samettarim/less-mixins/)[_default.less](less/_base/_default.less)
+_mixin.less [(less-mixins)](https://github.com/Samettarim/less-mixins/)
 
 ###### _layout
 
