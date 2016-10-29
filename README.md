@@ -12,7 +12,7 @@
 
 ### This repository has some folder and file structure for you:
 
-```php
+```less
 less/
 |- _base/
 |  |- _config.less
@@ -59,9 +59,9 @@ _mixin.less [(less-mixins)](https://github.com/Samettarim/less-mixins/)
 
 [_l-default.less](less/_layout/_l-default.less)
 
-[_l-float.less](less/_layout/_l-float..less)
+[_l-float.less](less/_layout/_l-float.less)
 
-[_l-margin.less](less/_layout/_l-margin..less)
+[_l-margin.less](less/_layout/_l-margin.less)
 
 _l-grid.less [(css-grids)](https://github.com/Samettarim/css-grids/)
 
