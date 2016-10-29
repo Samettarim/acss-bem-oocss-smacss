@@ -166,6 +166,7 @@ Good, you do this:
 
 > Scalable and Modular Architecture for CSS
 
+Augmented <nav> CSS:
 ```css
 nav.nav-primary li { 
     display: inline-block; 
@@ -177,6 +178,7 @@ nav.nav-primary li li {
 }
 ```
 
+SMACSS-style <nav> CSS:
 ```css
 .l-inline li { 
     display: inline-block;
