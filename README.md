@@ -189,7 +189,9 @@ SMACSS-style <nav> CSS:
 }
 ```
 
-###### Mix OCSS ACSS BEM SMACSS
+## Mix
+
+> OCSS - ACSS - BEM - SMACSS
 
 Better, you do this:
 ```css
