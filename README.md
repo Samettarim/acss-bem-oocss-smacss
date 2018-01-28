@@ -103,27 +103,39 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 }
 ```
 
+```html
+<article class="mt-20">
+    <img src="" alt="" title="" class="fl">
+</article>
+```
+
 ### BEM
 
 > Block, Element, Modifier
 
 ```css
 /* This is the Block */
-.block {}
+.block1 {}
+.block2 {}
 
 /* This is an element, that helps to form the block as a whole */
-.block__element {}
+.block__element1 {}
+.block__element2 {}
 
 /* This modifies the element or a block*/
-.block--modifier {}
+.block--modifier1 {}
+.block--modifier2 {}
 ```
 
 ```html
-<header class="block">
-    <h1 class="block__elem1">
-        <a class="block__elem2" href="/">clubmate.fi</a>
+<header class="block1">
+    <h1 class="block__element1">
+        <a class="block--modifier1" href="https://www.tnado.com/">tnado SEO CMS</a>
     </h1>
 </header>
+<article class="block2">
+    <h1 class="block__element2 block--modifier1">tnado SEO CMS</h1>
+</article>
 ```
 
 ### OOCSS
@@ -134,34 +146,52 @@ Here an ID was used and to which the skin was still defined
 
 Don't do this:
 ```css
+/* No id but we have more buttons on the site */
 #button {
 
-  width: 200px;
-  height: 50px;
-  padding: 10px;
-  border: solid 1px #ccc;
-  background: linear-gradient(#ccc, #222);
-  box-shadow: rgba(#000000,.5) 2px 2px 5px;
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border: solid 1px #ccc;
+    background: linear-gradient(#ccc, #222);
+    box-shadow: rgba(#000000,.5) 2px 2px 5px;
 }
 ```
 
 Good, you do this:
 ```css
+LESS - OOCSS, BEM and ACSS
+/* Give the button defaults */
 .button {
-  width: 200px;
-  height: 50px;
+
+    width: 200px;
+    height: 50px;
+
+    /* Give the button the skin */
+    &__skin {
+
+        border: solid 1px #ccc;
+        background: linear-gradient(#ccc, #222);
+        box-shadow: rgba(#000000,.5) 2px 2px 5px;
+
+        /* You want more padding. Use this BEM style or ACSS .p-10 */
+        &--p10 {
+
+            padding: 10px;
+        }
+    }
 }
 
-.skin {
-  border: solid 1px #ccc;
-  background: linear-gradient(#ccc, #222);
-  box-shadow: rgba(#000000,.5) 2px 2px 5px;
-}
-
-.p10 {
+/* Give a helper padding (ACSS) from helper file */
+.p-10 {
     padding: 10px;
 }
 ```
+
+```html
+<button class="button button__skin button__skin--p10">Send</button>
+```
+
 ### SMACSS
 
 > Scalable and Modular Architecture for CSS
@@ -180,13 +210,42 @@ nav.nav-primary li li {
 
 SMACSS-style <nav> CSS:
 ```css
-.l-inline li { 
-    display: inline-block;
+/* LESS - SMACSS and BEM */
+.l-inline {
+    &__item { 
+        display: inline-block;
+    }
 }
 
-.l-stacked li {
-    display: block;
+.l-stacked {
+    /* nav.nav-primary li */
+    &__item { 
+        display: block;
+    }
+    /* nav.nav-primary li li */
+    &__subitem { 
+        display: inline-block;
+    }
 }
+```
+
+```html
+<nav>
+    <ul class="l-inline">
+        <li class="l-inline__item"><a href="https://www.tnado.com/">Home</a></li>
+    </ul>
+</nav>
+
+<nav>
+    <ul class="l-stacked">
+        <li class="l-stacked__item">
+            <a href="https://www.tnado.com/">Home</a>
+            <ul class="l-stacked__subitem">
+                <li class="l-inline__item"><a href="https://www.tnado.com/">Home</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
 ```
 
 ## Mix
@@ -200,30 +259,46 @@ Better, you do this:
 
   width: 200px;
   height: 50px;
-}
 
-.m-button--default {
+    /* modifiers */
+    &__default {
+        padding: 0 20px;
+        background-color: #f00;
+    }
 
-  border: solid 1px #ccc;
-  background: linear-gradient(#ccc, #222);
-  box-shadow: rgba(#000000,.5) 2px 2px 5px;
-}
+    &__primary {
+        padding: 0 20px;
+        background-color: #0f0;
+    }
 
-.m-button--primary {
+    /* skins */
+    &--default {
 
-  border: solid 1px #ddd;
-  background: linear-gradient(#ddd, #333);
-  box-shadow: rgba(#ffffff,.5) 2px 2px 5px;
+      border: solid 1px #ccc;
+      background: linear-gradient(#ccc, #222);
+      box-shadow: rgba(#000000,.5) 2px 2px 5px;
+    }
+
+    &--primary {
+
+      border: solid 1px #ddd;
+      background: linear-gradient(#ddd, #333);
+      box-shadow: rgba(#ffffff,.5) 2px 2px 5px;
+    }
 }
 
 /** 
- * Prefix "l-" for layout 
- * l-"p-" for padding
- * l-p-"-10" for 10px
+ * Prefix "l-" layout prefixer 
+ * l-"p--" padding modifier
+ * l-p--"10" 10px padding
  */
-.l-p--10 {
-
-    padding: 10px;
+.l-p {
+    &--10 {
+        padding: 10px;
+    }
+    &--20 {
+        padding: 20px;
+    }
 }
 ```
 
