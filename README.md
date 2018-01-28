@@ -301,14 +301,6 @@ Better, you do this:
 }
 ```
 
-[More ACSS (smashingmagazine)](https://www.smashingmagazine.com/2013/10/challenging-css-best-practices-atomic-approach/)
-
-[More BEM (bem.info)](https://en.bem.info/methodology/key-concepts/)
-
-[More OOCSS (smashingmagazine)](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
-
-[More SMACSS (smacss)](https://smacss.com/)
-
 ## Contribute
 
 Please an [issue](https://github.com/Samettarim/less-mixins/issues) if you
