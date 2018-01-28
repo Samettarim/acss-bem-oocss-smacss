@@ -137,7 +137,6 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
     <h1 class="block__element2 block--modifier1">tnado SEO CMS</h1>
 </article>
 ```
-
 ### OOCSS
 
 > Separation of Structure From Skin
