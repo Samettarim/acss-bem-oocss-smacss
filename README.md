@@ -152,43 +152,76 @@ Don't do this:
     height: 50px;
     padding: 10px;
     border: solid 1px #ccc;
+    background: linear-gradient(#f00, #222);
+    box-shadow: rgba(#000000,.5) 2px 2px 5px;
+}
+
+#button2 {
+
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border: solid 1px #ccc;
     background: linear-gradient(#ccc, #222);
+    box-shadow: rgba(#000000,.5) 2px 2px 5px;
+}
+
+#button3 {
+
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border: solid 1px #ccc;
+    background: linear-gradient(#0f0, #222);
     box-shadow: rgba(#000000,.5) 2px 2px 5px;
 }
 ```
 
 Good, you do this:
 ```css
-LESS - OOCSS, BEM and ACSS
-/* Give the button defaults */
+LESS - OOCSS and BEM
+/* Give the button defaults (BEM) */
 .button {
 
     width: 200px;
     height: 50px;
 
     /* Give the button the skin */
-    &__skin {
+    &--skin {
+
+        border: solid 1px #ccc;
+        background: linear-gradient(#f00, #222);
+        box-shadow: rgba(#000000,.5) 2px 2px 5px;
+    }
+
+    /* Give the button the skin */
+    &--skin2 {
 
         border: solid 1px #ccc;
         background: linear-gradient(#ccc, #222);
         box-shadow: rgba(#000000,.5) 2px 2px 5px;
-
-        /* You want more padding. Use this BEM style or ACSS .p-10 */
-        &--p10 {
-
-            padding: 10px;
-        }
     }
-}
 
-/* Give a helper padding (ACSS) from helper file */
-.p-10 {
-    padding: 10px;
+    /* Give the button the skin */
+    &--skin3 {
+
+        border: solid 1px #ccc;
+        background: linear-gradient(#0f0, #222);
+        box-shadow: rgba(#000000,.5) 2px 2px 5px;
+    }
+
+    /* And padding */
+    .p--10 {
+
+        padding: 10px;
+    }
 }
 ```
 
 ```html
 <button class="button button__skin button__skin--p10">Send</button>
+<button class="button button__skin2 button__skin--p10">Send</button>
+<button class="button button__skin3">Send</button>
 ```
 
 ### SMACSS
@@ -249,17 +282,17 @@ SMACSS-style <nav> CSS:
 
 ## Mix
 
-> OCSS - ACSS - BEM - SMACSS
+> OOCSS - ACSS - BEM - SMACSS
 
 Better, you do this:
 ```css
-/* Prefix "m-" for module */
+/* Prefix "m-" for module and oocss */
 .m-button {
 
   width: 200px;
   height: 50px;
 
-    /* modifiers */
+    /* bem element */
     &__default {
         padding: 0 20px;
         background-color: #f00;
@@ -270,7 +303,7 @@ Better, you do this:
         background-color: #0f0;
     }
 
-    /* skins */
+    /* bem modifier */
     &--default {
 
       border: solid 1px #ccc;
@@ -284,19 +317,11 @@ Better, you do this:
       background: linear-gradient(#ddd, #333);
       box-shadow: rgba(#ffffff,.5) 2px 2px 5px;
     }
-}
 
-/** 
- * Prefix "l-" layout prefixer 
- * l-"p--" padding modifier
- * l-p--"10" 10px padding
- */
-.l-p {
-    &--10 {
-        padding: 10px;
-    }
-    &--20 {
-        padding: 20px;
+    /* acss and smacss */
+    &-inline {
+
+      display: inline-block;
     }
 }
 ```
