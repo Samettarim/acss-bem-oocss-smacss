@@ -13,19 +13,24 @@
 
 ### This repository has some folder and file structure for you:
 
+Inside in this sample:
+
+- [LESS Mixins](https://github.com/prod3v3loper/LESS-Mixins)
+- [CSS Grid](https://github.com/prod3v3loper/CSS-Grid)
+
 ```less
 less/
 |- _base/
 |  |- _default.less
 |  |- _config.less
-|  |- _mixin.less (less-mixins)
+|  |- _mixin.less
 |  |- ... add more ...
 |
 |- _layout/
 |  |- _l-default.less
 |  |- _l-float.less
 |  |- _l-margin.less
-|  |- _l-grid.less (css-grids)
+|  |- _l-grid.less
 |  |- ... add more ...
 |
 |- _module/
@@ -54,7 +59,7 @@ css/
 
 [_default.less](less/_base/_default.less)
 
-_mixin.less [(less-mixins)](https://github.com/Samettarim/less-mixins/)
+_mixin.less [(less-mixins)](https://github.com/prod3v3loper/less-mixins/)
 
 ###### _layout
 
@@ -64,7 +69,7 @@ _mixin.less [(less-mixins)](https://github.com/Samettarim/less-mixins/)
 
 [_l-margin.less](less/_layout/_l-margin.less)
 
-_l-grid.less [(css-grids)](https://github.com/Samettarim/css-grids/)
+_l-grid.less [(css-grids)](https://github.com/prod3v3loper/css-grids/)
 
 ###### _module
 
@@ -303,7 +308,7 @@ Better, you do this:
 
 ## Contribute
 
-Please an [issue](https://github.com/Samettarim/less-mixins/issues) if you
+Please an [issue](https://github.com/prod3v3loper/less-mixins/issues) if you
 think something could be improved. Please submit Pull Requests when ever
 possible.
 
@@ -313,7 +318,7 @@ possible.
 
 ## Authors
 
-* **Samet Tarim** - *All works* - [ProDeveloper](https://profiles.wordpress.org/prodeveloper/)
+* **Samet Tarim** - *All works* - [ProDeveloper](https://www.tnado.com/author/prod3v3loper/)
 
 ## License
 
