@@ -322,4 +322,4 @@ possible.
 
 ## License
 
-[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+[GNU](https://www.gnu.org/licenses/gpl-3.0.de.html)
