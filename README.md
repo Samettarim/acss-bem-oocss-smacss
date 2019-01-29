@@ -201,7 +201,7 @@ LESS - OOCSS, BEM and ACSS
 
 Not good to use the elements directly `nav > li` 
 
-Augmented <nav> CSS:
+Augmented CSS:
 ```css
 nav.nav-primary li { 
     display: inline-block; 
@@ -215,7 +215,7 @@ nav.nav-primary li li {
 
 Name all Elements and to scale and create a modular Architecture
 
-SMACSS-style <nav> CSS (LESS):
+SMACSS-style CSS (LESS):
 ```less
 /* LESS - SMACSS and BEM */
 .l-inline {
