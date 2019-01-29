@@ -124,12 +124,12 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 .block2 {}
 
 /* This is an element, that helps to form the block as a whole */
-.block__element1 {}
-.block__element2 {}
+.block1__element1 {}
+.block2__element2 {}
 
 /* This modifies the element or a block*/
-.block--modifier1 {}
-.block--modifier2 {}
+.block1--modifier1 {}
+.block2--modifier2 {}
 ```
 
 ```html
