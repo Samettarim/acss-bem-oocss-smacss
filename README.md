@@ -215,8 +215,8 @@ nav.nav-primary li li {
 
 Name all Elements and to scale and create a modular Architecture
 
-SMACSS-style <nav> CSS:
-```css
+SMACSS-style <nav> CSS (LESS):
+```less
 /* LESS - SMACSS and BEM */
 .l-inline {
     &__item { 
