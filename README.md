@@ -171,18 +171,17 @@ LESS - OOCSS, BEM and ACSS
     width: 200px;
     height: 50px;
 
-    /* Give the button the skin */
-    &__skin {
+    /* You can give here the padding but you need it not once */
+    /* &__element {
+        padding: 10px;
+    } */
+
+    /* Give the button the modifier */
+    &--skin {
 
         border: solid 1px #ccc;
         background: linear-gradient(#ccc, #222);
         box-shadow: rgba(#000000,.5) 2px 2px 5px;
-
-        /* You want more padding. Use this BEM style or ACSS .p-10 */
-        &--p10 {
-
-            padding: 10px;
-        }
     }
 }
 
@@ -193,7 +192,7 @@ LESS - OOCSS, BEM and ACSS
 ```
 
 ```html
-<button class="button button__skin button__skin--p10">Send</button>
+<button class="button button__skin p-10">Send</button>
 ```
 
 ### SMACSS
@@ -264,18 +263,12 @@ Better, you do this:
   width: 200px;
   height: 50px;
 
-    /* modifiers */
-    &__default {
-        padding: 0 20px;
-        background-color: #f00;
+    /* Elements */
+    &__small {
+        width: 100px;
     }
 
-    &__primary {
-        padding: 0 20px;
-        background-color: #0f0;
-    }
-
-    /* skins */
+    /* Modifiers */
     &--default {
 
       border: solid 1px #ccc;
@@ -304,6 +297,10 @@ Better, you do this:
         padding: 20px;
     }
 }
+```
+
+```html
+<button class="m-button m-button__small m-button__default l-p--10">Send</button>
 ```
 
 ## Contribute
