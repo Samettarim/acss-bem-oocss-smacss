@@ -134,12 +134,12 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 
 ```html
 <header class="block1">
-    <h1 class="block__element1">
-        <a class="block--modifier1" href="https://www.tnado.com/">tnado SEO CMS</a>
+    <h1 class="block1__element1">
+        <a class="block1--modifier1" href="https://www.tnado.com/">tnado SEO CMS</a>
     </h1>
 </header>
 <article class="block2">
-    <h1 class="block__element2 block--modifier1">tnado SEO CMS</h1>
+    <h1 class="block2__element2 block2--modifier2">tnado SEO CMS</h1>
 </article>
 ```
 ### OOCSS
