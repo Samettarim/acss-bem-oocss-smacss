@@ -148,7 +148,7 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 
 Here an ID was used and to which the skin was still defined
 
-Don't do this:
+Don't do this (PURE CSS):
 ```css
 /* No id but we have more buttons on the site */
 #button {
@@ -162,8 +162,8 @@ Don't do this:
 }
 ```
 
-Good, you do this:
-```css
+Good, you do this with preprocessors e.g. [LESS](http://lesscss.org/):
+```less
 LESS - OOCSS, BEM and ACSS
 /* Give the button defaults */
 .button {
