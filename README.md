@@ -148,7 +148,7 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 
 Here an ID was used and to which the skin was still defined
 
-Don't do this (PURE CSS):
+This is not good readable and not good scaleable (PURE CSS):
 ```css
 /* No id but we have more buttons on the site */
 #button {
@@ -199,6 +199,8 @@ LESS - OOCSS, BEM and ACSS
 
 > Scalable and Modular Architecture for CSS
 
+Not good to use the elements directly `nav > li` 
+
 Augmented <nav> CSS:
 ```css
 nav.nav-primary li { 
@@ -210,6 +212,8 @@ nav.nav-primary li li {
     display: block;
 }
 ```
+
+Name all Elements and to scale and create a modular Architecture
 
 SMACSS-style <nav> CSS:
 ```css
