@@ -233,7 +233,7 @@ LESS or SASS - OOCSS, BEM and ACSS
     }
 }
 
-/* Give a helper padding with a prefix (ACSS) from helper file but in BEM style with two -- */
+/* Give a helper padding with a prefix (ACSS) from helper file but in BEM style with two --, without BEM single - */
 .p {
 
     &--10 {
