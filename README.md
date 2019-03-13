@@ -10,7 +10,7 @@
 
 > Atomic CSS (ACSS)
 
-> Block, Element, Modifier (BEM)
+> Block Element Modifier (BEM)
 
 > Object Oriented CSS (OOCSS)
 
