@@ -1,7 +1,7 @@
 # ACSS - BEM - OOCSS - SMACSS (template)
 
-![alt text](https://img.shields.io/badge/build-passing-brightgreen.svg "Build passing")
-![alt text](https://img.shields.io/badge/license-CCO-blue.svg "CCO 1.0")
+![Language](https://img.shields.io/github/languages/top/prod3v3loper/acss-bem-oocss-smacss.svg "Language")
+![License](https://img.shields.io/github/license/prod3v3loper/acss-bem-oocss-smacss.svg "License")
 
 > Atomic CSS (ACSS)
 
@@ -15,8 +15,8 @@
 
 Inside in this sample:
 
-- [LESS Mixins](https://github.com/prod3v3loper/LESS-Mixins)
-- [CSS Grid](https://github.com/prod3v3loper/CSS-Grid)
+- [LESS Mixins](https://github.com/prod3v3loper/less-mixins)
+- [CSS Grid](https://github.com/prod3v3loper/css-grid)
 
 ```less
 less/
@@ -134,6 +134,10 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 /* This modifies the element or a block*/
 .block1--modifier1 {}
 .block2--modifier2 {}
+
+/* Block Element Modifier */
+.block2__element1--modifier1 {}
+.block2__element2--modifier2 {}
 ```
 
 ```html
@@ -142,15 +146,18 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
         <a class="block1--modifier1" href="https://www.tnado.com/">tnado SEO CMS</a>
     </h1>
 </header>
+<article class="block2 block2--modifier2">
+    <h1 class="block2__element2">tnado SEO CMS</h1>
+</article>
 <article class="block2">
-    <h1 class="block2__element2 block2--modifier2">tnado SEO CMS</h1>
+    <h1 class="block2__element2 block2__element2--modifier2">tnado SEO CMS</h1>
 </article>
 ```
 ### OOCSS
 
 > Separation of Structure From Skin
 
-Here an ID was used and to which the skin was still defined
+Here an ID was used and to which the skin was still defined.
 
 This is not good readable and not good scaleable (PURE CSS):
 ```css
@@ -166,19 +173,49 @@ This is not good readable and not good scaleable (PURE CSS):
 }
 ```
 
-Good, you do this with preprocessors e.g. [LESS](http://lesscss.org/):
+Good, you do this with preprocessors e.g. [LESS](http://lesscss.org/) or [SASS](https://sass-lang.com/):
+
+#### Without acss prefix
+
 ```less
-LESS - OOCSS, BEM and ACSS
+LESS or SASS - OOCSS, BEM
 /* Give the button defaults */
 .button {
 
-    width: 200px;
-    height: 50px;
+    /* You can give here the padding but you need it not once */
+    &__element {
+        width: 200px;
+        height: 50px;
+        padding: 5px 10px; /* small applications use here otherwise use a helper file */
+    }
+
+    /* Give the button the modifier */
+    &--skin {
+
+        border: solid 1px #ccc;
+        background: linear-gradient(#ccc, #222);
+        box-shadow: rgba(#000000,.5) 2px 2px 5px;
+    }
+}
+```
+
+```html
+<button class="button button__skin">Send</button>
+```
+
+#### With acss prefix
+
+```less
+LESS or SASS - OOCSS, BEM and ACSS
+/* Give the button defaults */
+.button {
 
     /* You can give here the padding but you need it not once */
-    /* &__element {
-        padding: 10px;
-    } */
+    &__element {
+
+        width: 200px;
+        height: 50px;
+    }
 
     /* Give the button the modifier */
     &--skin {
@@ -189,14 +226,25 @@ LESS - OOCSS, BEM and ACSS
     }
 }
 
-/* Give a helper padding (ACSS) from helper file */
-.p-10 {
-    padding: 10px;
+/* Give a helper padding with a prefix (ACSS) from helper file */
+.p {
+
+    &--10 {
+        padding: 10px;
+    }
+
+    &--20 {
+        padding: 20px;
+    }
+
+    &--30 {
+        padding: 30px;
+    }
 }
 ```
 
 ```html
-<button class="button button__skin p-10">Send</button>
+<button class="button button__skin p--10">Send</button>
 ```
 
 ### SMACSS
@@ -222,6 +270,8 @@ Name all Elements and to scale and create a modular Architecture
 SMACSS-style CSS (LESS):
 ```less
 /* LESS - SMACSS and BEM */
+
+/*  */
 .l-inline {
     &__item { 
         display: inline-block;
@@ -251,8 +301,8 @@ SMACSS-style CSS (LESS):
     <ul class="l-stacked">
         <li class="l-stacked__item">
             <a href="https://www.tnado.com/">Home</a>
-            <ul class="l-stacked__subitem">
-                <li class="l-inline__item"><a href="https://www.tnado.com/">Home</a></li>
+            <ul class="l-stacked">
+                <li class="l-stacked__subitem"><a href="https://www.tnado.com/">Home</a></li>
             </ul>
         </li>
     </ul>
@@ -268,10 +318,13 @@ Better, you do this:
 /* Prefix "m-" for module */
 .m-button {
 
-  width: 200px;
-  height: 50px;
+    height: 50px;
 
     /* Elements */
+    &__big {
+        width: 200px;
+    }
+
     &__small {
         width: 100px;
     }
@@ -293,6 +346,7 @@ Better, you do this:
 }
 
 /** 
+ * ACSS with prefix
  * Prefix "l-" layout prefixer 
  * l-"p--" padding modifier
  * l-p--"10" 10px padding
