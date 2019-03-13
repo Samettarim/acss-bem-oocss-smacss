@@ -207,7 +207,7 @@ LESS or SASS - OOCSS, BEM
 ```
 
 ```html
-<button class="button button__skin">Send</button>
+<button class="button__element button__skin">Send</button>
 ```
 
 #### With acss prefix
