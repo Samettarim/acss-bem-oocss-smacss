@@ -89,7 +89,7 @@ _l-grid.less [(css-grids)](https://github.com/prod3v3loper/css-grids/)
 
 [_t-default.less](less/_theme/_t-default.less)
 
-## Usage
+# Usage
 
 ### General Usage
 
