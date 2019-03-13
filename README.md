@@ -215,7 +215,7 @@ LESS or SASS - OOCSS, BEM
 ```less
 LESS or SASS - OOCSS, BEM and ACSS
 /* Give the button defaults */
-.button {
+.l-button {
 
     /* You can give here the padding but you need it not once */
     &__element {
@@ -251,7 +251,7 @@ LESS or SASS - OOCSS, BEM and ACSS
 ```
 
 ```html
-<button class="button button__skin p--10">Send</button>
+<button class="l-button l-button__skin p--10">Send</button>
 ```
 
 # SMACSS
