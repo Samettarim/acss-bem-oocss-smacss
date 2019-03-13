@@ -280,7 +280,7 @@ nav.nav-primary li li {
 }
 ```
 
-Name all Elements and to scale and create a modular Architecture
+Name all Elements to scale and create a modular Architecture
 
 SMACSS-style CSS (LESS):
 ```less
