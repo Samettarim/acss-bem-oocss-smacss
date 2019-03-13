@@ -122,7 +122,7 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 
 # BEM
 
-> Block, Element, Modifier
+> Block - Element - Modifier
 
 [BEM](http://getbem.com)
 
@@ -160,11 +160,13 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 
 # OOCSS
 
-> Separation of Structure From Skin
+> Object Oriented CSS
 
-Here an ID was used and to which the skin was still defined.
+Separation of Structure From Skin.
+Here as example an ID was used and to which the skin was still defined.
 
 This is not good readable and not good scaleable (PURE CSS):
+
 ```css
 /* No id but we have more buttons on the site */
 #button {
@@ -254,7 +256,7 @@ LESS or SASS - OOCSS, BEM and ACSS
 
 # SMACSS
 
-> Scalable and Modular Architecture for CSS
+> Scalable and Modular Architecture CSS
 
 Not good to use the elements directly `nav > li` 
 
@@ -318,7 +320,7 @@ SMACSS-style CSS (LESS):
 
 > OCSS - ACSS - BEM - SMACSS
 
-Better, you do this:
+Better, you do on big applications this:
 ```css
 /* Prefix "m-" for module */
 .m-button {
