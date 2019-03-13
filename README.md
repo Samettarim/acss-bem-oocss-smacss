@@ -185,7 +185,8 @@ Good, you do this with preprocessors e.g. [LESS](http://lesscss.org/) or [SASS](
 #### Without acss prefix
 
 ```less
-LESS or SASS - OOCSS, BEM
+/* LESS or SASS - OOCSS, BEM */
+
 /* Give the button defaults */
 .button {
 
@@ -213,7 +214,8 @@ LESS or SASS - OOCSS, BEM
 #### With acss prefix
 
 ```less
-LESS or SASS - OOCSS, BEM and ACSS
+/* LESS or SASS - OOCSS, BEM and ACSS */
+
 /* Give the button defaults */
 .l-button {
 
@@ -262,10 +264,16 @@ Not good to use the elements directly `nav > li`
 
 Augmented CSS:
 ```css
+nav li { 
+    display: inline-block; 
+}
+
+/* or */
 nav.nav-primary li { 
     display: inline-block; 
 }
 
+/* or */
 nav.nav-secondary li,
 nav.nav-primary li li {
     display: block;
@@ -276,20 +284,22 @@ Name all Elements and to scale and create a modular Architecture
 
 SMACSS-style CSS (LESS):
 ```less
-/* LESS - SMACSS and BEM */
+/* LESS or SASS - SMACSS and BEM */
 
-/*  */
 .l-inline {
+
     &__item { 
         display: inline-block;
     }
 }
 
 .l-stacked {
+
     /* nav.nav-primary li */
     &__item { 
         display: block;
     }
+
     /* nav.nav-primary li li */
     &__subitem { 
         display: inline-block;
