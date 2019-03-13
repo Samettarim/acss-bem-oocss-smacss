@@ -1,4 +1,6 @@
-# ACSS - BEM - OOCSS - SMACSS (template)
+<div align="center">
+
+# ACSS - BEM - OOCSS - SMACSS
 
 ![Language](https://img.shields.io/github/languages/top/prod3v3loper/acss-bem-oocss-smacss.svg "Language")
 ![License](https://img.shields.io/github/license/prod3v3loper/acss-bem-oocss-smacss.svg "License")
@@ -11,7 +13,9 @@
 
 > Scalable Modular Architecture CSS (SMACSS)
 
-### This repository has some folder and file structure for you:
+### This repository has some folder and file structure for you
+
+</div>
 
 Inside in this sample:
 
@@ -92,7 +96,7 @@ _l-grid.less [(css-grids)](https://github.com/prod3v3loper/css-grids/)
 In general you should include the folder `less/` in `build` into your 
 project folder structur and create your own ACSS BEM SMACSS OOCSS work as suggested in the docs for each ACSS BEM SMACSS OOCSS template.
 
-### ACSS
+# ACSS
 
 > Atomic CSS
 
@@ -116,7 +120,7 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
 </article>
 ```
 
-### BEM
+# BEM
 
 > Block, Element, Modifier
 
@@ -153,7 +157,8 @@ project folder structur and create your own ACSS BEM SMACSS OOCSS work as sugges
     <h1 class="block2__element2 block2__element2--modifier2">tnado SEO CMS</h1>
 </article>
 ```
-### OOCSS
+
+# OOCSS
 
 > Separation of Structure From Skin
 
@@ -247,7 +252,7 @@ LESS or SASS - OOCSS, BEM and ACSS
 <button class="button button__skin p--10">Send</button>
 ```
 
-### SMACSS
+# SMACSS
 
 > Scalable and Modular Architecture for CSS
 
@@ -309,7 +314,7 @@ SMACSS-style CSS (LESS):
 </nav>
 ```
 
-## Mix
+# Mix
 
 > OCSS - ACSS - BEM - SMACSS
 
@@ -364,21 +369,23 @@ Better, you do this:
 ```html
 <button class="m-button m-button__small m-button__default l-p--10">Send</button>
 ```
+<div align="center">
 
-## Contribute
+# Contribute
 
 Please an [issue](https://github.com/prod3v3loper/less-mixins/issues) if you
 think something could be improved. Please submit Pull Requests when ever
 possible.
 
-## Built with
+# Built with
+[NetBeans](https://netbeans.org/) - NetBeans editor for error-free code
 
-* [NetBeans](https://netbeans.org/) - NetBeans editor for error-free code
+# Authors
 
-## Authors
+**Samet Tarim** - *All works*
 
-* **Samet Tarim** - *All works* - [prod3v3loper](https://www.tnado.com/author/prod3v3loper/)
+# License
 
-## License
+[GNU](https://github.com/prod3v3loper/acss-bem-oocss-smacss/blob/master/LICENSE) - [prod3v3loper](https://www.tnado.com/author/prod3v3loper/)
 
-[GNU](https://github.com/prod3v3loper/acss-bem-oocss-smacss/blob/master/LICENSE)
+</div>
