@@ -258,7 +258,7 @@ Good, you do this with preprocessors e.g. [LESS](http://lesscss.org/) or [SASS](
 
 # SMACSS
 
-> Scalable and Modular Architecture CSS
+> Scalable and Modular Architecture CSS.
 
 Not good to use the elements directly `nav > li` 
 
@@ -280,7 +280,7 @@ nav.nav-primary li li {
 }
 ```
 
-Name all Elements to scale and create a modular Architecture
+Name all Elements to scale and create a modular Architecture.
 
 SMACSS-style CSS (LESS):
 ```less
