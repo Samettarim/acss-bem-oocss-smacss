@@ -211,7 +211,7 @@ Good, you do this with preprocessors e.g. [LESS](http://lesscss.org/) or [SASS](
 ```
 
 ```html
-<button class="button__element button__skin">Send</button>
+<button class="button__element button--skin">Send</button>
 ```
 
 #### With acss prefix
@@ -256,7 +256,9 @@ Good, you do this with preprocessors e.g. [LESS](http://lesscss.org/) or [SASS](
 ```
 
 ```html
-<button class="l-button l-button__skin p--10">Send</button>
+<div class="l-button">
+    <button class="l-button__element l-button--skin p--10">Send</button>
+</div>
 ```
 
 # SMACSS
