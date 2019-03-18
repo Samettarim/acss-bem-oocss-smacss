@@ -382,7 +382,7 @@ Better, you do on big applications this:
 ```
 
 ```html
-<button class="m-button m-button__small m-button__default l-p--10">Send</button>
+<button class="m-button m-button__small m-button--default l-p--10">Send</button>
 ```
 <div align="center">
 
